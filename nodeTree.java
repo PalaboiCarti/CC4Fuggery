@@ -1,6 +1,6 @@
 class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Try programiz.pro");
+        System.out.println("Now what?");
     }
 }
 
@@ -96,6 +96,32 @@ class BinaryTree
         if (root.key < key)
             return searchNode(root.right, key);
         return searchNode(root.left, key);
+    }
+    
+    int findMinValue(Node node){
+        Node current = node;
+        while(current.left != null)
+            current = current.left;
+        return current.key;
+    }
+    
+    Node deleteNode(Node root, int key){
+        if (root == null)
+            return root;
+            
+        if (key<root.key)
+            root.left = deleteNode(root.left, key);
+        else if(key > root.key)
+            root.right = deleteNode(root.right, key);
+        else{
+            if(root.left== null)
+                return root.right;
+            else if (root.right == null)
+                return root.left;
+            root.key = findMinValue(root.right);
+            root.right = deleteNode(root.right, root.key);
+        }
+        return root;
     }
   
 }
