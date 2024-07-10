@@ -1,6 +1,5 @@
 class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Now what?");
         //setting values
         BinaryTree bt1 = new BinaryTree(1);
         
@@ -13,8 +12,20 @@ class HelloWorld {
         
         bt1.insertLeft(bt1.root.right, 6);
         bt1.insertRight(bt1.root.right, 7);
-        
+
+        //main
+        System.out.println("In Order Traversal");
+        bt1.inorderTraversal(bt1.root);
+        System.out.println("");
+        System.out.println("Pre Order Traversal");
+        bt1.preorderTraversal(bt1.root);
+        System.out.println("");
+        System.out.println("Post Order Traversal");
         bt1.postorderTraversal(bt1.root);
+        System.out.println("");
+        System.out.println("");
+        System.out.println("Now what?");
+        
     }
 }
 
