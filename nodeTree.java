@@ -14,7 +14,24 @@ class HelloWorld {
         bt1.insertLeft(bt1.root.right, 6);
         bt1.insertRight(bt1.root.right, 7);
         
+        bt1.inorderTraversal(bt1.root);
+        System.out.println("...");
         bt1.postorderTraversal(bt1.root);
+        System.out.println("...");
+        bt1.preorderTraversal(bt1.root);
+        System.out.println("...");
+        System.out.println("deleting shit");
+        bt1.deleteNode(bt1.root.right.right, 4);
+        System.out.println("...");
+        bt1.inorderTraversal(bt1.root);
+        System.out.println("...");
+        bt1.postorderTraversal(bt1.root);
+        System.out.println("...");
+        bt1.preorderTraversal(bt1.root);
+        System.out.println("...");
+        
+        //its always deleting the node on the right for some reason and never the left.
+        //im going to figure out why the hell its like that
     }
 }
 
@@ -123,7 +140,7 @@ class BinaryTree
         if (root == null)
             return root;
             
-        if (key<root.key)
+        if (key < root.key)
             root.left = deleteNode(root.left, key);
         else if(key > root.key)
             root.right = deleteNode(root.right, key);
