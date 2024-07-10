@@ -1,6 +1,20 @@
 class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Now what?");
+        //setting values
+        BinaryTree bt1 = new BinaryTree(1);
+        
+        //insertion
+        bt1.insertLeft(bt1.root, 2);
+        bt1.insertRight(bt1.root, 3);
+        
+        bt1.insertLeft(bt1.root.left, 4);
+        bt1.insertRight(bt1.root.left, 5);
+        
+        bt1.insertLeft(bt1.root.right, 6);
+        bt1.insertRight(bt1.root.right, 7);
+        
+        bt1.postorderTraversal(bt1.root);
     }
 }
 
