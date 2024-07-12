@@ -1,9 +1,19 @@
-class HelloWorld {
+import java.util.Scanner;
+
+class Reyes_Trees 
+{
     public static void main(String[] args) {
         //setting values
-        BinaryTree bt1 = new BinaryTree(1);
+        int[] nodes = {};
+        for(int i = 0; i<5; i++){
+            Scanner myScan = new Scanner(System.in); 
+            System.out.println("Enter node value");
+            int userNode = myScan.nextInt();
+            nodes[i] = userNode;
+        }
         
         //insertion
+        BinaryTree bt1 = new BinaryTree(1);
         bt1.insertLeft(bt1.root, 2);
         bt1.insertRight(bt1.root, 3);
         
@@ -14,17 +24,14 @@ class HelloWorld {
         bt1.insertRight(bt1.root.right, 7);
 
         //main
-        System.out.println("In Order Traversal");
+        System.out.println("Inorder Traversal");
         bt1.inorderTraversal(bt1.root);
         System.out.println("");
-        System.out.println("Pre Order Traversal");
+        System.out.println("Preorder Traversal");
         bt1.preorderTraversal(bt1.root);
         System.out.println("");
-        System.out.println("Post Order Traversal");
+        System.out.println("Postorder Traversal");
         bt1.postorderTraversal(bt1.root);
-        System.out.println("");
-        System.out.println("");
-        System.out.println("Now what?");
         
     }
 }
