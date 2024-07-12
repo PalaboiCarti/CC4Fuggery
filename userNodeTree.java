@@ -4,24 +4,32 @@ class Reyes_Trees
 {
     public static void main(String[] args) {
         //setting values
-        int[] nodes = {};
-        for(int i = 0; i<5; i++){
+        int[] nodes = new int[7];
+        for(int i = 0; i<7; i++){
             Scanner myScan = new Scanner(System.in); 
             System.out.println("Enter node value");
             int userNode = myScan.nextInt();
             nodes[i] = userNode;
         }
         
+        System.out.println(" ");
+        System.out.print("Binary Tree Array:");
+        for(int i = 0; i<7; i++){
+            System.out.print(nodes[i]);
+        }
+        System.out.println(" ");
+        System.out.println(" ");
+        
         //insertion
-        BinaryTree bt1 = new BinaryTree(1);
-        bt1.insertLeft(bt1.root, 2);
-        bt1.insertRight(bt1.root, 3);
+        BinaryTree bt1 = new BinaryTree(nodes[0]);
+        bt1.insertLeft(bt1.root, nodes[1]);
+        bt1.insertRight(bt1.root, nodes[2]);
         
-        bt1.insertLeft(bt1.root.left, 4);
-        bt1.insertRight(bt1.root.left, 5);
+        bt1.insertLeft(bt1.root.left, nodes[3]);
+        bt1.insertRight(bt1.root.left, nodes[4]);
         
-        bt1.insertLeft(bt1.root.right, 6);
-        bt1.insertRight(bt1.root.right, 7);
+        bt1.insertLeft(bt1.root.right, nodes[5]);
+        bt1.insertRight(bt1.root.right, nodes[6]);
 
         //main
         System.out.println("Inorder Traversal");
